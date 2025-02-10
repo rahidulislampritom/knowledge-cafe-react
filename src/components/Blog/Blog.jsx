@@ -7,7 +7,7 @@ const Blog = ({ blog }) => {
 
             <div>
                 <div className="">
-                    <img className=" w-4xl md:h-96 lg:h-[650px]  object-cover rounded-xl" src={cover} alt="" />
+                    <img className=" w-4xl object-cover rounded-xl" src={cover} alt="" />
                 </div>
 
 
