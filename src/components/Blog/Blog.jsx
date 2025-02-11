@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { FaBookmark } from "react-icons/fa";
 
 const Blog = ({ blog,handleBookmarks, handleReadingTime }) => {
-    const { author_img, name, cover, hashtags, posted_date, reading_time, title } = blog;
+    const {id, author_img, name, cover, hashtags, posted_date, reading_time, title } = blog;
     return (
         <div className="mb-10 lg:mb-14 mt-6 lg:mt-10">
 
@@ -19,7 +19,7 @@ const Blog = ({ blog,handleBookmarks, handleReadingTime }) => {
                         <div>
                             <img className="w-16 h-16 rounded-full object-cover" src={author_img} alt="" />
                         </div>
-
+                       
                         <div>
                             <h3 className="text-[#111111] text-2xl font-bold">{name}</h3>
                             <p>{posted_date}</p>
@@ -29,7 +29,6 @@ const Blog = ({ blog,handleBookmarks, handleReadingTime }) => {
 
                     <div>
                         <p className="text-[tomato]">{reading_time} min read <button onClick={()=>handleBookmarks(blog)} className="text-black"><FaBookmark /></button></p>
-                        
                     </div>
 
                 </div>
@@ -38,7 +37,7 @@ const Blog = ({ blog,handleBookmarks, handleReadingTime }) => {
             <div className="md:space-y-2">
                 <h1 className="text-[#111111] text-xl lg:text-4xl font-bold">{title} </h1>
                 <p>{hashtags.map((hashtag, idx) => <span className="mr-2" key={idx}>{hashtag}</span>)}</p>
-                <button onClick={()=>handleReadingTime(reading_time)} className="underline text-[#6047EC] font-bold">Mark as read</button>
+                <button onClick={()=>handleReadingTime(id,reading_time)} className="underline text-[#6047EC] font-bold">Mark as read</button>
             </div>
         </div>
     );
